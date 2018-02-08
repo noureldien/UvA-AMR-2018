@@ -39,7 +39,7 @@ Now that you have done these steps:
 your are ready to write your first script using MATLAB to control the EV3 model inside the V-Rep simulator.
 
 ---
-#### 6. Contact
+### 6. Contact
 
 |  Your Teachers | Name | E-mail | Room |
 | ---------------------------- | --------- | ------------| ------------|
