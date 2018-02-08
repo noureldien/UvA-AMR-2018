@@ -36,6 +36,7 @@ Now that you have done these steps:
 1. installed V-Rep simulator
 2. downloaded the EV3 model and added them to the V-Rep simulator
 3. installed MATLAB and the EV3 toolbox
+
 your are ready to write your first script using MATLAB to control the EV3 model inside the V-Rep simulator.
 
 ---
