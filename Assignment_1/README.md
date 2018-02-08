@@ -5,7 +5,7 @@ In this assignment, we will learn how to control the EV3 robot using MATLAB. We 
 
 
 #### Getting Started
-1. Download the scene file from [here](../blob/master/Assignment_1/assignment_1_scene_1.ttt)
+1. Download the scene file from [here](../assignment_1_scene_1.ttt)
 2. Open V-Rep simulator import the scene into the simulator. You can do so using the program menu `File` then click on  the menu item `Open Scene ...`. Another way to open the scene is to drag-drop it to the window of the V-Rep simulator.
 3. The next step is to start your MATLAB to write the script and control the EV3 robot in the scene you just loaded. Open 
 
