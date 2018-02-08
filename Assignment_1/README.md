@@ -1,4 +1,3 @@
-
 ##Assignment 1
 
 ##### Deadline: Friday 9th Feb 2018, 10:59 AM
