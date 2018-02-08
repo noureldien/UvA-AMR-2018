@@ -23,7 +23,7 @@ You are required to write MATLAB script to control and move the EV3 through the 
 
 #### 2.2 Closed-loop Control
 
-For this part, we want to use one of the sensors in the EV3 to get feedback from the environment. Read the data of one of the EV3 sensors and use it to adjust/correct your navigation through the maze. May be Sonar is enough? List of the sensors available in the EV3 robot and the corresponding MATLAB functions can be found in the toolbox documentation, [here](../MATLAB_toolbox_documentation_english.pdf?raw=true).
+For this part, we want to use one of the sensors in the EV3 to get feedback from the environment. Read the data of one of the EV3 sensors and use it to adjust/correct your navigation through the maze. May be Sonar is enough? List of the sensors available in the EV3 robot and the corresponding MATLAB functions can be found in the toolbox documentation, [here](../ev3_toolbox_for_matlab/documentation_english.pdf?raw=true).
 
 ---
 
