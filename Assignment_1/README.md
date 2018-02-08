@@ -7,9 +7,9 @@ In this assignment, we will learn how to control the Lego EV3 robot using MATLAB
 ---
 
 #### 1. Getting Started
-1.1 Download the scene file from [here](../Assignment_1/assignment_1_scene_1.ttt?raw=true)
-1.2 Open V-Rep simulator and import the scene into the simulator. You can do so using the program menu `File` then click on  the menu item `Open Scene ...`. Another way to import the scene into V-Rep is to drag-drop the scene file `assignment_1_scene_1.ttt` into the window of the V-Rep simulator.
-1.3 The next step is to start your MATLAB to write the script and control the EV3 robot in the scene you just loaded. Please make sure you opened V-Rep before you open MATLAB. After opening the MATLAB, in the address bar of MATLAB, navigate to the folder/directory where you will save the scripts of this assignment, for example: `home/[user_name]/study/amr/assignments/assignment_1/`. Now, create a new script file called `task1.m` and start writing your code to solve this assignment.
+1. Download the scene file from [here](../Assignment_1/assignment_1_scene_1.ttt?raw=true)
+2. Open V-Rep simulator and import the scene into the simulator. You can do so using the program menu `File` then click on  the menu item `Open Scene ...`. Another way to import the scene into V-Rep is to drag-drop the scene file `assignment_1_scene_1.ttt` into the window of the V-Rep simulator.
+3. The next step is to start your MATLAB to write the script and control the EV3 robot in the scene you just loaded. Please make sure you opened V-Rep before you open MATLAB. After opening the MATLAB, in the address bar of MATLAB, navigate to the folder/directory where you will save the scripts of this assignment, for example: `home/[user_name]/study/amr/assignments/assignment_1/`. Now, create a new script file called `task1.m` and start writing your code to solve this assignment.
 
 ---
 
