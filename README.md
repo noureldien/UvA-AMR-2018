@@ -42,9 +42,9 @@ your are ready to write your first script using MATLAB to control the EV3 model 
 ---
 ### 6. Contact
 
-| Name | Job | E-mail | Room |
-| ---------------------------- | --------- | ------------| ------------|
-| Toto | Lecturer | a.vaninge@uva.nl | C3.157
-| Nour | Teaching Assistant | nhussein@uva.nl | C3.250a
+| Name | E-mail | Room |
+| -------- | -------- | -------- |
+| Toto (Lecturer) | a.vaninge@uva.nl | C3.157
+| Nour (Teaching Assistant) | nhussein@uva.nl | C3.250a
 
 
