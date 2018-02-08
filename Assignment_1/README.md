@@ -1,6 +1,6 @@
-## Assignment 1
+## <center>Assignment 1</center>
 
-##### Deadline: Friday 9th Feb 2018, 10:59 AM
+##### <center>Deadline: Friday 9th Feb 2018, 10:59 AM</center>
 
 In this assignment, we will learn how to control the Lego EV3 robot using MATLAB. We have two tasks, open-loop control and closed-loop control.
 
