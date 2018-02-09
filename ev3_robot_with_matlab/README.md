@@ -1,7 +1,7 @@
 ## <center>LEGO EV3</center>
 
 ### 1. Introduction
-This file gets you started how to control the real LEGO EV3 robot using either MATLAB or python. For now, MATLAB is the supported language.
+This file gets you started how to control the real LEGO EV3 robot using MATLAB.
 
 ---
 #### Useful Links
