@@ -3,7 +3,6 @@
 ### 1. Introduction
 This file gets you started how to control LEGO EV3 robot using MATLAB.
 
----
 #### Useful Links
 
 - [EV3 Manual](http://cache.lego.com/r/www/r/mindstorms/-/media/Franchises/Mindstorms/Retail/Downloads/User%20Guides/ts.20130821T090518.User%20Guide%20LEGO%20MINDSTORMS%20EV3%2010%20All%20ENUS.pdf)
