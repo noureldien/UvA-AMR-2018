@@ -10,7 +10,7 @@ This repository contains the assignments and the related materials for the cours
 - [GitHub](https://github.com/noureldien/UvA-AMR-2018/) contains the assignments and their materials
 - [Blackboard](http://blackboard.ic.uva.nl/webapps/portal/frameset.jsp?tab_id=_2_1&url=%2fwebapps%2fblackboard%2fexecute%2flauncher%3ftype%3dCourse%26id%3d_215425_1%26url%3d) to submit the solved assignments
 - [ETH Slides](http://www.asl.ethz.ch/education/lectures/autonomous_mobile_robots/spring-2017.html)
-- [EdX Problem Sets(http://www.asl.ethz.ch/education/lectures/autonomous_mobile_robots/spring-2017.html)]
+- [EdX Problem Sets](http://www.asl.ethz.ch/education/lectures/autonomous_mobile_robots/spring-2017.html)
 
 ---
 ### 2. LEGO EV3 Robot
