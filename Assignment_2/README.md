@@ -2,7 +2,7 @@
 
 ## <center>Assignment 2</center>
 
-##### <center>Deadline: Sunday 18 Feb 2018, 11:59 PM</center>
+##### <center>Deadline: Friday 23 Feb 2018, 10:59 PM</center>
 In this assignment, we will solve problem for Locomotion and Kinematics of some types of mobile robots.
 
 #### Grading
