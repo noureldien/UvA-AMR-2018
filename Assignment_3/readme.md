@@ -17,11 +17,11 @@ Exercise 3 and 4 explore these line features for localization against a known ma
 
 A range scan describes a 2D slice of the environment. Points in a range scan are specified in a polar coordinate system with the origin at the location of the sensor. It is common in literature to assume that the noise on measurements follows a Gaussian distribution with zero mean, some range variance and negligible angular uncertainty.
 
-We choose to express a line in polar parameters ( r, α ) as defined by the line equation (1) for the Cartesian coordinates ( x, y ) of the points lying on the line
+We choose to express a line in polar parameters $(r, \alpha)$ as defined by the line equation (1) for the Cartesian coordinates ( x, y ) of the points lying on the line
 $$
 x \cos \alpha  + y \sin \alpha = r,
 $$
-where − π < α ≤ π is the angle between the x-axis and the shortest connection between the origin and the line. This connection’s length is r ≥ 0 (see Figure 1).
+where $-\pi \lt \alpha \leq \pi$ is the angle between the x-axis and the shortest connection between the origin and the line. This connection’s length is $r \geq 0$ (see Figure 1).
 
 ![GitHub Logo](https://raw.githubusercontent.com/noureldien/UvA-AMR-2018/master/Assignment_3/media/split_and_merge.png)
 
@@ -33,13 +33,15 @@ We employ the popular “Split-and-Merge”[1, p.249-250] line extraction algori
 
 #### 2.2 Algorithm in Matlab
 
-The Split-and-Merge algorithm is implemented inside the function [ α i , r i , . . . ] = extractLines ( x i, y i ) . A crucial part of this function is the line fitting step. Task: Edit fitLine.m and follow the instructions to complete the mathematical formula for computing line regression (line fitting) using a set of points in Cartesian coordinates after reading the following theory. The aim of the function is to minimize the sum of squared errors:
+The Split-and-Merge algorithm is implemented inside the function $[\alpha^{i}, r^{i}, ...] = extractLines ( x^i, y^i )$ . A crucial part of this function is the line fitting step.
+
+**Task**: Edit `fitLine.m` and follow the instructions to complete the mathematical formula for computing line regression (line fitting) using a set of points in Cartesian coordinates after reading the following theory. The aim of the function is to minimize the sum of squared errors:
 
 $$
-S(r, \alpha) := \sum_i (\underbrace{r - x^i \cos \alpha - y^i sin \alpha}_{=D(\alpha,r), (x^i, y^i)})^2
+S(r, \alpha) := \sum_i (\underbrace{r - x^i \cos \alpha - y^i sin \alpha}_{=(D(\alpha,r), (x^i, y^i))})^2
 $$
 
-where ( $x^i$ , $y^i$ ) are the input points in Cartesian coordinates. The solution of ( r, α ) can be found by imposing: ∇ S = 0 . The solution for α is then
+where ( $x^i$ , $y^i$ ) are the input points in Cartesian coordinates. The solution of $(r, \alpha)$ can be found by imposing: $\nabla S=0$. The solution for $\alpha$ is then
 $$
 \alpha = \frac{tan^{-1} (\frac{num}{denom})}{2}
 $$
@@ -52,16 +54,15 @@ $$
 denom:= \sum_i (y^i - y_c)^2 -(x^i - x_c)^2
 $$
 
-where ( x c , y c ) are the Cartesian coordinate of the ( x i , y i ) ’s centroid (see instructions in `fitLine.m`). In order to solve for r consider the equation (1) and a point that will surely lie on the line (which one is it?). Please find additional information on [1, pp. 244] including a solution for polar input on [1, p. 246]. As soon as the lines are correctly fitted, the algorithm performs Split-and-Merge and extracts the endpoints of each segment.
+where $(x_c, y_c)$ are the Cartesian coordinate of the$(x^i, y^i)$ ’s centroid (see instructions in `fitLine.m`). In order to solve for r consider the equation (1) and a point that will surely lie on the line (which one is it?). Please find additional information on [1, pp. 244] including a solution for polar input on [1, p. 246]. As soon as the lines are correctly fitted, the algorithm performs Split-and-Merge and extracts the endpoints of each segment.
 
-*Validation*: Run `test/testLineExtraction.m` to check if the code is correctly completed. If not it will show a figure with the measured points and expected lines (in yellow) as together with the found lines and segments (in red, green and blue). To test only the fitLine function on artifical data use `test/testLineFitting.m`.
+**Validation**: Run `test/testLineExtraction.m` to check if the code is correctly completed. If not it will show a figure with the measured points and expected lines (in yellow) as together with the found lines and segments (in red, green and blue). To test only the fitLine function on artifical data use `test/testLineFitting.m`.
 
 ---
 ### 3. Handing-In
 
-Write your code for the aforementioned task in MATLAB script file. Then, upload it to [Blackboard](blackboard.uva.nl/).
+Write your code for the aforementioned task in MATLAB script file, then upload it to [Blackboard](blackboard.uva.nl/).
 
 ---
 ### References
 Roland Siegwart, Illah Nourbakhsh, and Davide Scaramuzza. Introduction to Autonomous Mobile Robots. MIT Press, 2nd edition, 2011.
-
