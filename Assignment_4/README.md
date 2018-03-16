@@ -61,33 +61,42 @@ As introduced in Exercise 3, lines can be parametrized as $\mathbf{m}^i = [\alph
 
 ##### 2.2. Measurement Association
 
-In order to apply the Kalman filter update correctly, associations between observations and map entries need to be established. To this end we employ the ahalanobis distance between a predicted measurement ˆz i t and an observation z j. With the innovation vijt
-as a measure of the difference between a predicted and observed measurement
+In order to apply the Kalman filter update correctly, associations between observations and map entries need to be established. To this end we employ the ahalanobis distance between a predicted measurement $\hat{\mathbf{z}}^i_t$ and an observation $\mathbf{z}^j$. With the innovation $\mathbf{v}^{ij}_t$ as a measure of the difference between a predicted and observed measurement
 
 $$
 \mathbf{v}^{ij}_t = \mathbf{z}_t^j - \hat{\mathbf{z}}_t^i
 $$
 
-and the *innovation covariance* $\mathbf{\sum}^{ij}_{1N_t}$
+and the *innovation covariance* $\mathbf{\sum}^{ij}_{IN_t}$
 
 $$
-\mathbf{\sum}^{ij}_{1N_t} = \mathbf{\hat{H}}_t * \mathbf{\hat{H}}_t
+\mathbf{\sum}^{ij}_{IN_t} = \mathbf{\hat{H}}_t^j  * \mathbf{\hat{P}}_t  * \mathbf{\hat{H}}_t^{iT} + \mathbf{R}_t^j
 $$
 
 the Mahalanobis distance is calculated as
 $$
-d^{d}_{d} = {\mathbf{v}}^{ijT}_{]
+d_t^{ij} = \mathbf{v}_t^{ijT} . \left( \sum^{ij}_{IN_t} \right)^{-1} . \mathbf{v}_t^{ij}
 $$
+
+In real-world robotics application there will always be corrupting measurements that do not correspond to entries in the map. In the example presented in the introduction, it could be a previously closed door that was opened or furniture that got moved around. Hence, we introduce a *validation gate* $g$ and only consider associations that fall into this gate $d_T^{ij} < g^2$ . When multiple map entries fall into the validation gate of a single measurement, the measurement is associated with the entry with the smallest Mahalanobis distance. On the other hand, multiple measurements may be associated with a single map entry. Please find additional information in
+[1, p. 334-335, 340-342].
+
+**Task**: Write a Matlab/Octave function $[ \hat{\mathbf{v}}_t, \mathbf{\hat{H}}_t, \mathbf{\hat{R}}_t ] = associateMeasurements (\mathbf{\hat{x}}_t, \hat{\mathbf{P}}_t, \mathbf{Z}_t, \mathbf{M}, g)$ that accepts the *a priori* state estimate $\hat{x}_t$ and its covariance $\hat{\mathbf{P}}_t$ , $N$ measurements $\mathbf{Z}_t$ expressed as a $2\times N$ matrix and their covariances $\mathbf{R}_t$ expressed as $2 \times 2 \times N$ tensor, as well as the map $\mathbf{M}$, and a scalar validation *gate g*. The function returns a $2 \times K$ matrix $\hat{\mathbf{v}}_t$ , of innovations $\mathbf{v}_t^{ij}$ where $K$ denotes the number of successfully matched line features, as well as a $2 × 3 × K$ tensor $\mathbf{\hat{H}}_t$ of the Jacobians of the measurement function in the same order and a $2 × 2 × K$ tensor $\mathbf{R}_t$ of the corresponding measurement uncertainties. Although the focus of this exercise is on the correct association of the perceived lines with the map, the outputs are defined to facilitate the EKF implementation in the next task and in turn to avoid duplications of computations.
+**Validation**: Run the function `validateAssociations()` . The function reports on the correctness of your implementation.
 
 ---
 ### 3. V-Rep Experiment
 
-To be presented in the next practical session Tuesday 13 Match.
+So far, line extraction and EKF localization have been implemented and verified separately. In this exercise, we will combine them to implement the complete functionality and test it in the simulation environment V-REP.
+
+**Task**: Write a Matlab/Octave function $[ \mathbf{x}_t , \mathbf{P}_t ] = incrementalLocalization(\mathbf{x}_{t-1}, \mathbf{P}_{t-1}, \mathbf{u}_t, \mathbf{S}_t, \mathbf{M}, params, k, b, g)$ that takes the previous pose, control inputs and the laser scan data $\mathbf{S}$ as arguments and returns an *a posterori* estimate the pose of the robots and its covariance.
+
+**Validation:**: Start V-REP, load scene `scene/mooc_exercises.ttt` and start the simulation. You should see a circular robot, a set of walls and the visualization of laser measurements. Now run the script `vrepSimulation`. The robotic platform should start moving on a circular path. Close to the actual robot you should see a yellow "ghost", which visualizes the pose as estimated by your localization. Just like in real robotics applications, you might find that the localization does not work flawlessly. As both faces of each wall are entries to the map and as line features are solely associated by Mahalanobis distance, the measurements may be incorrectly associated with the opposite face of the wall, visible as a bias in the localization. You may also move the starting position in the simulation environment and re-run the simulation. Depending on the number and constellation of observed walls, the observability of the global pose may be affected, resulting in impaired state estimates.
 
 ---
 ### 4. Handing-In
 
-Write your code for the aforementioned task in MATLAB script code provided. Then, compress and upload it to [Blackboard](blackboard.uva.nl/).
+Write your code for the aforementioned tasks (2.1, 2.2.1, 2.2.2) in MATLAB script code provided. Then, compress and upload it to [Blackboard](blackboard.uva.nl/).
 
 ---
 ### References
