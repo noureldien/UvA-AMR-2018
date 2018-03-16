@@ -1,6 +1,6 @@
 ## <center>Assignment 4</center>
 
-##### <center>Deadline: Friday 16 March 2018, 11:59 PM</center>
+##### <center>Deadline: Tuesday 20 March 2018, 11:59 PM</center>
 
 In this assignment, we will build a line-based Kalman Filter for robot localization.
 
@@ -102,5 +102,3 @@ Write your code for the aforementioned tasks (2.1, 2.2.1, 2.2.2) in MATLAB scrip
 ### References
 [1] Roland Siegwart, Illah Nourbakhsh, and Davide Scaramuzza. Introduction to Autonomous Mobile Robots. MIT Press, 2nd edition, 2011.
 [2] Greg Welch and Gary Bishop. An introduction to the kalman filter, 1995.
-
-
